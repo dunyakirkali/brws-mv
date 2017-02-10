@@ -12,6 +12,7 @@
 		053C4A251E4E761F00CEFFFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A231E4E761F00CEFFFC /* Main.storyboard */; };
 		053C4A271E4E761F00CEFFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A261E4E761F00CEFFFC /* Assets.xcassets */; };
 		053C4A2A1E4E761F00CEFFFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A281E4E761F00CEFFFC /* LaunchScreen.storyboard */; };
+		2CC18416D027373CF4DC664C /* libPods-brws-mv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B08DB7A82D174E5EEFCAD12 /* libPods-brws-mv.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		053C4A261E4E761F00CEFFFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		053C4A291E4E761F00CEFFFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053C4A2B1E4E761F00CEFFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B2B3B1B0134CCE49117C95 /* Pods-brws-mv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brws-mv.debug.xcconfig"; path = "Pods/Target Support Files/Pods-brws-mv/Pods-brws-mv.debug.xcconfig"; sourceTree = "<group>"; };
+		4B08DB7A82D174E5EEFCAD12 /* libPods-brws-mv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-brws-mv.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DEB7BD0E911B9F31446C520 /* Pods-brws-mv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brws-mv.release.xcconfig"; path = "Pods/Target Support Files/Pods-brws-mv/Pods-brws-mv.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC18416D027373CF4DC664C /* libPods-brws-mv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				053C4A1E1E4E761F00CEFFFC /* brws-mv */,
 				053C4A1D1E4E761F00CEFFFC /* Products */,
+				DE8C225C9BEE20DBE845540D /* Pods */,
+				96C0848E57F1D09F4BB469ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = "brws-mv";
 			sourceTree = "<group>";
 		};
+		96C0848E57F1D09F4BB469ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B08DB7A82D174E5EEFCAD12 /* libPods-brws-mv.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE8C225C9BEE20DBE845540D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45B2B3B1B0134CCE49117C95 /* Pods-brws-mv.debug.xcconfig */,
+				7DEB7BD0E911B9F31446C520 /* Pods-brws-mv.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 053C4A2E1E4E761F00CEFFFC /* Build configuration list for PBXNativeTarget "brws-mv" */;
 			buildPhases = (
+				D3CFDE7DDAF2A9487CBA6EFA /* [CP] Check Pods Manifest.lock */,
 				053C4A181E4E761F00CEFFFC /* Sources */,
 				053C4A191E4E761F00CEFFFC /* Frameworks */,
 				053C4A1A1E4E761F00CEFFFC /* Resources */,
+				F0359A36F616EE0A43072470 /* [CP] Embed Pods Frameworks */,
+				BB82F3829A1FE3CB58E002C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BB82F3829A1FE3CB58E002C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-brws-mv/Pods-brws-mv-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3CFDE7DDAF2A9487CBA6EFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0359A36F616EE0A43072470 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-brws-mv/Pods-brws-mv-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		053C4A181E4E761F00CEFFFC /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		053C4A2F1E4E761F00CEFFFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45B2B3B1B0134CCE49117C95 /* Pods-brws-mv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RMWQMGE5WJ;
@@ -272,6 +348,7 @@
 		};
 		053C4A301E4E761F00CEFFFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DEB7BD0E911B9F31446C520 /* Pods-brws-mv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RMWQMGE5WJ;
