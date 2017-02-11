@@ -18,6 +18,7 @@
 		053C4A271E4E761F00CEFFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A261E4E761F00CEFFFC /* Assets.xcassets */; };
 		053C4A2A1E4E761F00CEFFFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A281E4E761F00CEFFFC /* LaunchScreen.storyboard */; };
 		05FA83D51E4FC52500A01646 /* CircularStdBook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05FA83D41E4FC52500A01646 /* CircularStdBook.ttf */; };
+		05FA83D81E4FC75600A01646 /* SegueToDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FA83D71E4FC75600A01646 /* SegueToDetail.swift */; };
 		2CC18416D027373CF4DC664C /* libPods-brws-mv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B08DB7A82D174E5EEFCAD12 /* libPods-brws-mv.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		053C4A291E4E761F00CEFFFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053C4A2B1E4E761F00CEFFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05FA83D41E4FC52500A01646 /* CircularStdBook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CircularStdBook.ttf; sourceTree = "<group>"; };
+		05FA83D71E4FC75600A01646 /* SegueToDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueToDetail.swift; sourceTree = "<group>"; };
 		45B2B3B1B0134CCE49117C95 /* Pods-brws-mv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brws-mv.debug.xcconfig"; path = "Pods/Target Support Files/Pods-brws-mv/Pods-brws-mv.debug.xcconfig"; sourceTree = "<group>"; };
 		4B08DB7A82D174E5EEFCAD12 /* libPods-brws-mv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-brws-mv.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEB7BD0E911B9F31446C520 /* Pods-brws-mv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brws-mv.release.xcconfig"; path = "Pods/Target Support Files/Pods-brws-mv/Pods-brws-mv.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		053C4A1E1E4E761F00CEFFFC /* brws-mv */ = {
 			isa = PBXGroup;
 			children = (
+				05FA83D61E4FC73C00A01646 /* segues */,
 				051AAC6A1E4FB3EC002DE2B1 /* models */,
 				051AAC641E4FAC0F002DE2B1 /* assets */,
 				05D4B6DA1E4E7B790033CACE /* views */,
@@ -135,6 +138,14 @@
 				05FA83D41E4FC52500A01646 /* CircularStdBook.ttf */,
 			);
 			name = fonts;
+			sourceTree = "<group>";
+		};
+		05FA83D61E4FC73C00A01646 /* segues */ = {
+			isa = PBXGroup;
+			children = (
+				05FA83D71E4FC75600A01646 /* SegueToDetail.swift */,
+			);
+			name = segues;
 			sourceTree = "<group>";
 		};
 		96C0848E57F1D09F4BB469ED /* Frameworks */ = {
@@ -282,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				051AAC621E4FA9DC002DE2B1 /* MovieCellTableViewCell.swift in Sources */,
+				05FA83D81E4FC75600A01646 /* SegueToDetail.swift in Sources */,
 				053C4A221E4E761F00CEFFFC /* SearchViewController.swift in Sources */,
 				051AAC691E4FB2AF002DE2B1 /* DetailViewController.swift in Sources */,
 				053C4A201E4E761F00CEFFFC /* AppDelegate.swift in Sources */,

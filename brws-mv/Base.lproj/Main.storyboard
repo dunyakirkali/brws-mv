@@ -56,7 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="J5p-Vq-lvt" id="aPE-Cx-5O3"/>
-                        <segue destination="PAG-ny-LyC" kind="show" identifier="toMovieDetails" id="kcE-eH-QHa"/>
+                        <segue destination="PAG-ny-LyC" kind="show" identifier="toMovieDetails" customClass="SegueToDetail" customModule="brws_mv" customModuleProvider="target" id="kcE-eH-QHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
