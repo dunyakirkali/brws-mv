@@ -11,9 +11,16 @@ import UIKit
 class SegueToDetail: UIStoryboardSegue {
 
     override func perform() {
-        let destinationViewControlle = self.destination;
-        let sourceViewController = self.source;
+        let destinationViewController = self.destination;
+        let sourceViewController = self.source as! SearchViewController
+        let frame = sourceViewController.view.superview?.frame
+        let width = frame!.width * -1
+        let searchBar = sourceViewController.searchBar
         
-        sourceViewController.present(destinationViewControlle, animated: false, completion: nil)
+        UIView.animate(withDuration: 0.5, animations: {
+           searchBar?.transform = CGAffineTransform(translationX: width, y: 0)
+        }, completion: { finished in
+            sourceViewController.present(destinationViewController, animated: false, completion: nil)
+        })
     }
 }

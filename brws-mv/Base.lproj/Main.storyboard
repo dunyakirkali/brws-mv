@@ -55,6 +55,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="WOn-hv-qGL" id="IYz-x9-LMY"/>
                         <outlet property="tableView" destination="J5p-Vq-lvt" id="aPE-Cx-5O3"/>
                         <segue destination="PAG-ny-LyC" kind="show" identifier="toMovieDetails" customClass="SegueToDetail" customModule="brws_mv" customModuleProvider="target" id="kcE-eH-QHa"/>
                     </connections>
