@@ -8,17 +8,18 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
+    var selectedRow: MovieCellTableViewCell!
 
     let movies = [
         Movie.init(title: "Terminator", image: UIImage(named: "eyes.jpg")!),
         Movie.init(title: "Matrix", image: UIImage(named: "twinpeaks.png")!),
         Movie.init(title: "Cloud Atlas", image: UIImage(named: "matrix.png")!),
-        Movie.init(title: "Harry Potter", image: UIImage(named: "eyes.jpg")!),
-        Movie.init(title: "Waterworld", image: UIImage(named: "eyes.jpg")!)
+        Movie.init(title: "Harry Potter", image: UIImage(named: "placeholder.png")!),
+        Movie.init(title: "Waterworld", image: UIImage(named: "placeholder.jpg")!)
     ]
     let tableCellIdentifier = "MovieCell"
 
@@ -51,7 +52,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)        
+        selectedRow = tableView.cellForRow(at: indexPath) as! MovieCellTableViewCell        
         tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
     }
     

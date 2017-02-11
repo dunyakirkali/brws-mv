@@ -12,6 +12,7 @@ class MovieCellTableViewCell: UITableViewCell {
     
     @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var movieName: UILabel!
+    @IBOutlet var masker: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

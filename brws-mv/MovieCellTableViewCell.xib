@@ -54,6 +54,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundImage" destination="UJJ-Cj-QC5" id="8SK-aR-yW0"/>
+                <outlet property="masker" destination="g0q-9g-Mcl" id="8le-I1-7Sn"/>
                 <outlet property="movieName" destination="jgp-HU-Qao" id="c1L-bL-WxU"/>
             </connections>
             <point key="canvasLocation" x="23" y="110.5"/>

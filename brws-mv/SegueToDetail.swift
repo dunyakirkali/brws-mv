@@ -18,7 +18,8 @@ class SegueToDetail: UIStoryboardSegue {
         let searchBar = sourceViewController.searchBar
         
         UIView.animate(withDuration: 0.5, animations: {
-           searchBar?.transform = CGAffineTransform(translationX: width, y: 0)
+            searchBar?.transform = CGAffineTransform(translationX: width, y: 0)
+            sourceViewController.selectedRow.masker.alpha = 0
         }, completion: { finished in
             sourceViewController.present(destinationViewController, animated: false, completion: nil)
         })
