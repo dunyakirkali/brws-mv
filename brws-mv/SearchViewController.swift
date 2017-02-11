@@ -14,11 +14,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var searchBar: UISearchBar!
 
     let movies = [
-        Movie.init(title: "Terminator"),
-        Movie.init(title: "Matrix"),
-        Movie.init(title: "Cloud Atlas"),
-        Movie.init(title: "Harry Potter"),
-        Movie.init(title: "Waterworld")
+        Movie.init(title: "Terminator", image: UIImage(named: "eyes.jpg")!),
+        Movie.init(title: "Matrix", image: UIImage(named: "twinpeaks.png")!),
+        Movie.init(title: "Cloud Atlas", image: UIImage(named: "matrix.png")!),
+        Movie.init(title: "Harry Potter", image: UIImage(named: "eyes.jpg")!),
+        Movie.init(title: "Waterworld", image: UIImage(named: "eyes.jpg")!)
     ]
     let tableCellIdentifier = "MovieCell"
 
@@ -40,6 +40,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! MovieCellTableViewCell
         let row = indexPath.row
         cell.movieName?.text = movies[row].title
+        cell.backgroundImage?.image = movies[row].image
         return cell
     }
     
