@@ -9,11 +9,16 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    @IBOutlet var titleLabel: UILabel!
+    
+    var movie : Movie?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        titleLabel.text = movie?.title
     }
 
     override func didReceiveMemoryWarning() {

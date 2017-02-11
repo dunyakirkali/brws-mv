@@ -10,4 +10,10 @@ import UIKit
 
 class Movie: NSObject {
 
+    var title: String
+    
+    init(title: String) {
+        self.title  = title
+    }
+
 }
