@@ -9,6 +9,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStdBook.ttf">
+            <string>CircularStdBook</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -97,13 +102,23 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EBn-GS-JOX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejC-Vy-bi2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="44"/>
+                                        <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="ejC-Vy-bi2" firstAttribute="leading" secondItem="CuV-lu-TWc" secondAttribute="leading" id="F7h-KK-w7p"/>
                                     <constraint firstItem="EBn-GS-JOX" firstAttribute="top" secondItem="CuV-lu-TWc" secondAttribute="top" id="F8c-y6-Yxp"/>
                                     <constraint firstAttribute="trailing" secondItem="EBn-GS-JOX" secondAttribute="trailing" id="GSP-Hd-H6b"/>
                                     <constraint firstItem="EBn-GS-JOX" firstAttribute="height" secondItem="CuV-lu-TWc" secondAttribute="height" multiplier="0.33" id="GXM-jS-pUX"/>
                                     <constraint firstItem="EBn-GS-JOX" firstAttribute="leading" secondItem="CuV-lu-TWc" secondAttribute="leading" id="LOV-6G-FbY"/>
+                                    <constraint firstItem="ejC-Vy-bi2" firstAttribute="height" secondItem="EBn-GS-JOX" secondAttribute="height" id="UaR-5L-V7j"/>
+                                    <constraint firstItem="ejC-Vy-bi2" firstAttribute="top" secondItem="CuV-lu-TWc" secondAttribute="top" id="mmk-zd-AWA"/>
+                                    <constraint firstAttribute="trailing" secondItem="ejC-Vy-bi2" secondAttribute="trailing" id="vbC-T1-58a"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -118,6 +133,9 @@
                             <constraint firstItem="IDe-bQ-jFr" firstAttribute="top" secondItem="hkL-Ck-h1X" secondAttribute="bottom" id="xwb-Ja-00u"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="ejC-Vy-bi2" id="Nf6-7U-Bp1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqe-Gz-qJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
