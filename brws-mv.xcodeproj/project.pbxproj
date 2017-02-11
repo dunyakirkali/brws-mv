@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		051AAC621E4FA9DC002DE2B1 /* MovieCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AAC601E4FA9DC002DE2B1 /* MovieCellTableViewCell.swift */; };
 		051AAC631E4FA9DC002DE2B1 /* MovieCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051AAC611E4FA9DC002DE2B1 /* MovieCellTableViewCell.xib */; };
+		051AAC671E4FAC1E002DE2B1 /* eyes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 051AAC661E4FAC1E002DE2B1 /* eyes.jpg */; };
 		053C4A201E4E761F00CEFFFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C4A1F1E4E761F00CEFFFC /* AppDelegate.swift */; };
 		053C4A221E4E761F00CEFFFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C4A211E4E761F00CEFFFC /* SearchViewController.swift */; };
 		053C4A251E4E761F00CEFFFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A231E4E761F00CEFFFC /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		051AAC601E4FA9DC002DE2B1 /* MovieCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCellTableViewCell.swift; sourceTree = "<group>"; };
 		051AAC611E4FA9DC002DE2B1 /* MovieCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCellTableViewCell.xib; sourceTree = "<group>"; };
+		051AAC661E4FAC1E002DE2B1 /* eyes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eyes.jpg; sourceTree = "<group>"; };
 		053C4A1C1E4E761F00CEFFFC /* brws-mv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brws-mv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		053C4A1F1E4E761F00CEFFFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053C4A211E4E761F00CEFFFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +46,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051AAC641E4FAC0F002DE2B1 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				051AAC651E4FAC14002DE2B1 /* images */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		051AAC651E4FAC14002DE2B1 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				051AAC661E4FAC1E002DE2B1 /* eyes.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		053C4A131E4E761F00CEFFFC = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +83,7 @@
 		053C4A1E1E4E761F00CEFFFC /* brws-mv */ = {
 			isa = PBXGroup;
 			children = (
+				051AAC641E4FAC0F002DE2B1 /* assets */,
 				05D4B6DA1E4E7B790033CACE /* views */,
 				05D4B6D91E4E7B690033CACE /* controllers */,
 				053C4A1F1E4E761F00CEFFFC /* AppDelegate.swift */,
@@ -176,6 +195,7 @@
 				053C4A2A1E4E761F00CEFFFC /* LaunchScreen.storyboard in Resources */,
 				053C4A271E4E761F00CEFFFC /* Assets.xcassets in Resources */,
 				051AAC631E4FA9DC002DE2B1 /* MovieCellTableViewCell.xib in Resources */,
+				051AAC671E4FAC1E002DE2B1 /* eyes.jpg in Resources */,
 				053C4A251E4E761F00CEFFFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
