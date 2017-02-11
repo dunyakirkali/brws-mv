@@ -26,6 +26,10 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UJJ-Cj-QC5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0q-9g-Mcl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
+                        <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Matrix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgp-HU-Qao">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                         <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="44"/>
@@ -36,11 +40,15 @@
                 <constraints>
                     <constraint firstItem="jgp-HU-Qao" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1yn-tR-uUm"/>
                     <constraint firstAttribute="bottom" secondItem="UJJ-Cj-QC5" secondAttribute="bottom" id="QeK-d7-egf"/>
+                    <constraint firstAttribute="bottom" secondItem="g0q-9g-Mcl" secondAttribute="bottom" id="SiB-0c-54t"/>
                     <constraint firstItem="jgp-HU-Qao" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="X2K-2B-Pb7"/>
                     <constraint firstItem="UJJ-Cj-QC5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Xro-LH-fWM"/>
                     <constraint firstAttribute="trailing" secondItem="jgp-HU-Qao" secondAttribute="trailing" id="Zfa-gT-2hx"/>
+                    <constraint firstItem="g0q-9g-Mcl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cDS-pa-tpG"/>
                     <constraint firstItem="UJJ-Cj-QC5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kMA-3S-DY5"/>
                     <constraint firstAttribute="bottom" secondItem="jgp-HU-Qao" secondAttribute="bottom" id="l0c-Kf-dJ6"/>
+                    <constraint firstAttribute="trailing" secondItem="g0q-9g-Mcl" secondAttribute="trailing" id="lk8-Ph-VL3"/>
+                    <constraint firstItem="g0q-9g-Mcl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u2n-s2-B0c"/>
                     <constraint firstAttribute="trailing" secondItem="UJJ-Cj-QC5" secondAttribute="trailing" id="x7D-D9-vHb"/>
                 </constraints>
             </tableViewCellContentView>
