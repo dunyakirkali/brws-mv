@@ -17,6 +17,9 @@
 		053C4A251E4E761F00CEFFFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A231E4E761F00CEFFFC /* Main.storyboard */; };
 		053C4A271E4E761F00CEFFFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A261E4E761F00CEFFFC /* Assets.xcassets */; };
 		053C4A2A1E4E761F00CEFFFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C4A281E4E761F00CEFFFC /* LaunchScreen.storyboard */; };
+		05A668091E50A533003C1ED1 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A668081E50A533003C1ED1 /* Client.swift */; };
+		05B41B961E50AB2E002861AE /* PlaceholderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41B941E50AB2E002861AE /* PlaceholderTableViewCell.swift */; };
+		05B41B971E50AB2E002861AE /* PlaceholderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B41B951E50AB2E002861AE /* PlaceholderTableViewCell.xib */; };
 		05FA83D51E4FC52500A01646 /* CircularStdBook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05FA83D41E4FC52500A01646 /* CircularStdBook.ttf */; };
 		05FA83D81E4FC75600A01646 /* SegueToDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FA83D71E4FC75600A01646 /* SegueToDetail.swift */; };
 		05FA83DB1E4FCFBF00A01646 /* matrix.png in Resources */ = {isa = PBXBuildFile; fileRef = 05FA83D91E4FCFBF00A01646 /* matrix.png */; };
@@ -39,6 +42,9 @@
 		053C4A261E4E761F00CEFFFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		053C4A291E4E761F00CEFFFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053C4A2B1E4E761F00CEFFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05A668081E50A533003C1ED1 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		05B41B941E50AB2E002861AE /* PlaceholderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTableViewCell.swift; sourceTree = "<group>"; };
+		05B41B951E50AB2E002861AE /* PlaceholderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTableViewCell.xib; sourceTree = "<group>"; };
 		05FA83D41E4FC52500A01646 /* CircularStdBook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CircularStdBook.ttf; sourceTree = "<group>"; };
 		05FA83D71E4FC75600A01646 /* SegueToDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueToDetail.swift; sourceTree = "<group>"; };
 		05FA83D91E4FCFBF00A01646 /* matrix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matrix.png; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 		053C4A1E1E4E761F00CEFFFC /* brws-mv */ = {
 			isa = PBXGroup;
 			children = (
+				05A668071E50A523003C1ED1 /* services */,
 				05FA83D61E4FC73C00A01646 /* segues */,
 				051AAC6A1E4FB3EC002DE2B1 /* models */,
 				051AAC641E4FAC0F002DE2B1 /* assets */,
@@ -124,6 +131,14 @@
 				053C4A2B1E4E761F00CEFFFC /* Info.plist */,
 			);
 			path = "brws-mv";
+			sourceTree = "<group>";
+		};
+		05A668071E50A523003C1ED1 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				05A668081E50A533003C1ED1 /* Client.swift */,
+			);
+			name = services;
 			sourceTree = "<group>";
 		};
 		05D4B6D91E4E7B690033CACE /* controllers */ = {
@@ -140,6 +155,8 @@
 			children = (
 				051AAC601E4FA9DC002DE2B1 /* MovieCellTableViewCell.swift */,
 				051AAC611E4FA9DC002DE2B1 /* MovieCellTableViewCell.xib */,
+				05B41B941E50AB2E002861AE /* PlaceholderTableViewCell.swift */,
+				05B41B951E50AB2E002861AE /* PlaceholderTableViewCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -243,6 +260,7 @@
 				05FA83D51E4FC52500A01646 /* CircularStdBook.ttf in Resources */,
 				053C4A2A1E4E761F00CEFFFC /* LaunchScreen.storyboard in Resources */,
 				053C4A271E4E761F00CEFFFC /* Assets.xcassets in Resources */,
+				05B41B971E50AB2E002861AE /* PlaceholderTableViewCell.xib in Resources */,
 				05FA83E01E4FD39B00A01646 /* placeholder.jpg in Resources */,
 				051AAC631E4FA9DC002DE2B1 /* MovieCellTableViewCell.xib in Resources */,
 				05FA83DE1E4FD35A00A01646 /* placeholder.png in Resources */,
@@ -309,11 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				051AAC621E4FA9DC002DE2B1 /* MovieCellTableViewCell.swift in Sources */,
+				05A668091E50A533003C1ED1 /* Client.swift in Sources */,
 				05FA83D81E4FC75600A01646 /* SegueToDetail.swift in Sources */,
 				053C4A221E4E761F00CEFFFC /* SearchViewController.swift in Sources */,
 				051AAC691E4FB2AF002DE2B1 /* DetailViewController.swift in Sources */,
 				053C4A201E4E761F00CEFFFC /* AppDelegate.swift in Sources */,
 				051AAC6C1E4FB3FC002DE2B1 /* Movie.swift in Sources */,
+				05B41B961E50AB2E002861AE /* PlaceholderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

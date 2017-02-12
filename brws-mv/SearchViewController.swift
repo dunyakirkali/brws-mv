@@ -14,19 +14,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var searchBar: UISearchBar!
     var selectedRow: MovieCellTableViewCell!
 
-    let movies = [
-        Movie.init(title: "Terminator", image: UIImage(named: "eyes.jpg")!),
-        Movie.init(title: "Matrix", image: UIImage(named: "twinpeaks.png")!),
-        Movie.init(title: "Cloud Atlas", image: UIImage(named: "matrix.png")!),
-        Movie.init(title: "Harry Potter", image: UIImage(named: "placeholder.png")!),
-        Movie.init(title: "Waterworld", image: UIImage(named: "placeholder.jpg")!)
-    ]
+    var movies = [Movie]()
     let tableCellIdentifier = "MovieCell"
+    let placeholderCellIdentifier = "PlaceholderCell"
+    var searchDelayer : Timer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         tableView.register(UINib(nibName: "MovieCellTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
+        tableView.register(UINib(nibName: "PlaceholderTableViewCell", bundle: nil), forCellReuseIdentifier: placeholderCellIdentifier)
+        
+        Client.sharedInstance.configure()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,15 +33,24 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        if movies.count == 0 {
+            return 1
+        } else {
+            return movies.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! MovieCellTableViewCell
         let row = indexPath.row
-        cell.movieName?.text = movies[row].title
-        cell.backgroundImage?.image = movies[row].image
-        return cell
+        if movies.count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: placeholderCellIdentifier, for: indexPath) as! PlaceholderTableViewCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! MovieCellTableViewCell
+            cell.movieName?.text = movies[row].title
+            cell.backgroundImage?.image = movies[row].image
+            return cell
+        }
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -52,12 +60,32 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if movies.count == 0 {
+            return
+        }
         selectedRow = tableView.cellForRow(at: indexPath) as! MovieCellTableViewCell        
         tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.size.height / 3.0;
+        if movies.count == 0 {
+            return tableView.frame.size.height
+        } else {
+            return tableView.frame.size.height / 3.0;
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        searchDelayer.invalidate()
+//        searchDelayer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(searchFor(title: searchText)), userInfo: nil, repeats: false)
+        print(searchText)
+        
+        searchFor(title: searchText)
+    }
+    
+    func searchFor(title: String) {
+        movies = Client.sharedInstance.searchFor(title: title)
+        tableView.reloadData()
     }
 }
 
