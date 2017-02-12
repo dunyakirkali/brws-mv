@@ -17,7 +17,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var movies = [Movie]()
     let tableCellIdentifier = "MovieCell"
     let placeholderCellIdentifier = "PlaceholderCell"
-    var searchDelayer : Timer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,17 +74,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        searchDelayer.invalidate()
-//        searchDelayer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(searchFor(title: searchText)), userInfo: nil, repeats: false)
-        print(searchText)
-        
-        searchFor(title: searchText)
-    }
-    
     func searchFor(title: String) {
         movies = Client.sharedInstance.searchFor(title: title)
         tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchFor(title: searchBar.text!)
+        self.view.endEditing(true)
     }
 }
 

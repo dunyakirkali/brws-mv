@@ -16,14 +16,16 @@ class Client: NSObject {
     }
     
     func searchFor(title: String) -> [Movie] {
-        print("Searching for \(title)")
-        var results = [
-            Movie.init(title: "Terminator", image: UIImage(named: "eyes.jpg")!),
-            Movie.init(title: "Matrix", image: UIImage(named: "twinpeaks.png")!),
-            Movie.init(title: "Cloud Atlas", image: UIImage(named: "matrix.png")!),
-            Movie.init(title: "Harry Potter", image: UIImage(named: "placeholder.png")!),
-            Movie.init(title: "Waterworld", image: UIImage(named: "placeholder.jpg")!)
-        ]
+        var results = [Movie]()
+        if title != "" {
+            results = [
+                Movie.init(title: "Terminator", image: UIImage(named: "eyes.jpg")!),
+                Movie.init(title: "Matrix", image: UIImage(named: "twinpeaks.png")!),
+                Movie.init(title: "Cloud Atlas", image: UIImage(named: "matrix.png")!),
+                Movie.init(title: "Harry Potter", image: UIImage(named: "placeholder.png")!),
+                Movie.init(title: "Waterworld", image: UIImage(named: "placeholder.jpg")!)
+            ]
+        }
         return results
     }
 }
