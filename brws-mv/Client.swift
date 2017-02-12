@@ -10,6 +10,7 @@ import UIKit
 
 class Client: NSObject {
     static let sharedInstance = Client()
+    let kBaseURL:String = "http://www.omdbapi.com/"
     
     func configure() {
         print("Configure")
