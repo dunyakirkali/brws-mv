@@ -9,10 +9,21 @@
 import UIKit
 
 class PlaceholderTableViewCell: UITableViewCell {
+    
+    let endGetNotificationName = Notification.Name("endGet")
+    let startGetNotificationName = Notification.Name("startGet")
+
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var placeholderLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.hideLoader), name: endGetNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showLoader), name: startGetNotificationName, object: nil)
+        
+        loader.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -21,4 +32,17 @@ class PlaceholderTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func showLoader() {
+        print("showLoader")
+        loader.isHidden = false
+        loader.startAnimating()
+        placeholderLabel.isHidden = true
+    }
+    
+    func hideLoader() {
+        print("hideLoader")
+        loader.isHidden = true
+        loader.stopAnimating()
+        placeholderLabel.isHidden = false
+    }
 }

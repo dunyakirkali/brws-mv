@@ -57,10 +57,11 @@
                             <constraint firstItem="J5p-Vq-lvt" firstAttribute="top" secondItem="WOn-hv-qGL" secondAttribute="bottom" id="xQZ-iy-a8n"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wpK-K3-Snf"/>
                     <connections>
                         <outlet property="searchBar" destination="WOn-hv-qGL" id="IYz-x9-LMY"/>
                         <outlet property="tableView" destination="J5p-Vq-lvt" id="aPE-Cx-5O3"/>
-                        <segue destination="PAG-ny-LyC" kind="show" identifier="toMovieDetails" customClass="SegueToDetail" customModule="brws_mv" customModuleProvider="target" id="kcE-eH-QHa"/>
+                        <segue destination="PAG-ny-LyC" kind="custom" identifier="toMovieDetails" customClass="SegueToDetail" customModule="brws_mv" customModuleProvider="target" id="kcE-eH-QHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

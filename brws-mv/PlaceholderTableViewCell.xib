@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,35 +17,57 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="124" id="KGk-i7-Jjw" customClass="PlaceholderTableViewCell" customModule="brws_mv" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="427" id="KGk-i7-Jjw" customClass="PlaceholderTableViewCell" customModule="brws_mv" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="123.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XWL-qU-0Ka">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="123.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZM1-hc-Lhn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="123.5"/>
-                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="44"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVG-se-9lY">
+                        <rect key="frame" x="48" y="128" width="224" height="170"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZM1-hc-Lhn">
+                                <rect key="frame" x="0.0" y="0.0" width="224" height="170"/>
+                                <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="44"/>
+                                <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="h1e-fy-A01">
+                                <rect key="frame" x="94" y="66" width="37" height="37"/>
+                                <color key="color" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ZM1-hc-Lhn" secondAttribute="bottom" id="3Uw-HW-x1m"/>
+                            <constraint firstItem="h1e-fy-A01" firstAttribute="centerY" secondItem="GVG-se-9lY" secondAttribute="centerY" id="DMn-p0-yjm"/>
+                            <constraint firstItem="ZM1-hc-Lhn" firstAttribute="leading" secondItem="GVG-se-9lY" secondAttribute="leading" id="KgL-5u-sWE"/>
+                            <constraint firstItem="ZM1-hc-Lhn" firstAttribute="top" secondItem="GVG-se-9lY" secondAttribute="top" id="OUp-yP-mEh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZM1-hc-Lhn" secondAttribute="trailing" id="eP5-hG-cyP"/>
+                            <constraint firstItem="h1e-fy-A01" firstAttribute="centerX" secondItem="GVG-se-9lY" secondAttribute="centerX" id="xfW-le-l4D"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ZM1-hc-Lhn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1b4-pt-RNO"/>
                     <constraint firstItem="XWL-qU-0Ka" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="346-Fb-oK6"/>
+                    <constraint firstItem="GVG-se-9lY" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.7" id="O5I-cm-39x"/>
+                    <constraint firstItem="GVG-se-9lY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Q1c-cA-bBr"/>
+                    <constraint firstItem="GVG-se-9lY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VYz-cK-mUO"/>
                     <constraint firstAttribute="trailing" secondItem="XWL-qU-0Ka" secondAttribute="trailing" id="aKj-Gc-WRD"/>
-                    <constraint firstAttribute="trailing" secondItem="ZM1-hc-Lhn" secondAttribute="trailing" id="eET-V5-TpF"/>
-                    <constraint firstItem="ZM1-hc-Lhn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kQK-wA-Ji4"/>
                     <constraint firstItem="XWL-qU-0Ka" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="plA-E7-efO"/>
                     <constraint firstAttribute="bottom" secondItem="XWL-qU-0Ka" secondAttribute="bottom" id="qlY-Fi-ZFu"/>
-                    <constraint firstAttribute="bottom" secondItem="ZM1-hc-Lhn" secondAttribute="bottom" id="yPw-Lq-86A"/>
+                    <constraint firstItem="GVG-se-9lY" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.4" id="wKq-MS-s7t"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="26" y="92"/>
+            <connections>
+                <outlet property="loader" destination="h1e-fy-A01" id="Kt8-Tu-5FJ"/>
+                <outlet property="placeholderLabel" destination="ZM1-hc-Lhn" id="yzS-oU-bgi"/>
+            </connections>
+            <point key="canvasLocation" x="-86" y="-6.5"/>
         </tableViewCell>
     </objects>
     <resources>

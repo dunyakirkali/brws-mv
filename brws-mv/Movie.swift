@@ -11,11 +11,19 @@ import UIKit
 class Movie: NSObject {
 
     var title: String
-    var image: UIImage!
-    
-    init(title: String, image: UIImage) {
+    var year: String
+    var genre: String
+    var director: String
+    var plot: String
+    var poster: UIImage!
+
+    init(title: String, year: String, genre: String, director: String, plot: String, poster: UIImage) {
         self.title = title
-        self.image = image
+        self.year = year
+        self.genre = genre
+        self.director = director
+        self.plot = plot
+        self.poster = poster
     }
 
 }

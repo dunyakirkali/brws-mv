@@ -23,8 +23,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.register(UINib(nibName: "MovieCellTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
         tableView.register(UINib(nibName: "PlaceholderTableViewCell", bundle: nil), forCellReuseIdentifier: placeholderCellIdentifier)
-        
-        Client.sharedInstance.configure()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,13 +45,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! MovieCellTableViewCell
             cell.movieName?.text = movies[row].title
-            cell.backgroundImage?.image = movies[row].image
+            cell.backgroundImage?.image = movies[row].poster
             return cell
         }
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        let destinationVC = DetailViewController()
+//        let destinationVC = DetailViewController()
 //        destinationVC.movie = movies[row]
         self.performSegue(withIdentifier: "toMovieDetails", sender: self)
     }
