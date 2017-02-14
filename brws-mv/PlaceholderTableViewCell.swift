@@ -33,14 +33,12 @@ class PlaceholderTableViewCell: UITableViewCell {
     }
     
     func showLoader() {
-        print("showLoader")
         loader.isHidden = false
         loader.startAnimating()
         placeholderLabel.isHidden = true
     }
     
     func hideLoader() {
-        print("hideLoader")
         loader.isHidden = true
         loader.stopAnimating()
         placeholderLabel.isHidden = false

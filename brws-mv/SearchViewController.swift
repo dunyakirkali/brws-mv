@@ -51,7 +51,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             if movies[row].poster != "N/A" {
                 let url = URL(string: movies[row].poster)
                 let data = try? Data(contentsOf: url!)
-                print(movies[row].poster)
                 cell.backgroundImage?.image = UIImage(data: data!)
             } else {
                 cell.backgroundImage?.image = UIImage(named: "placeholder.jpg")
@@ -87,14 +86,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func populateMovies(_ notification: NSNotification) {
-        print("populateMovies")
         movies = notification.object as! [Movie]
         tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let movie = movies[tableView.indexPathForSelectedRow!.row]
-        print(movie)
         let destinationVC = segue.destination as! DetailViewController
         destinationVC.movie = movie
     }
