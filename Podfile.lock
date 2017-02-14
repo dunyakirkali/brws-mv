@@ -1,7 +1,7 @@
 PODS:
   - ISO8601DateFormatterValueTransformer (0.6.1):
     - RKValueTransformers (~> 1.1.0)
-  - ReachabilitySwift (3)
+  - Reachability (3.2)
   - RestKit (0.27.0):
     - RestKit/Core (= 0.27.0)
   - RestKit/Core (0.27.0):
@@ -25,17 +25,17 @@ PODS:
   - TransitionKit (2.2.1)
 
 DEPENDENCIES:
-  - ReachabilitySwift (~> 3)
+  - Reachability
   - RestKit
 
 SPEC CHECKSUMS:
   ISO8601DateFormatterValueTransformer: 52da467d6ec899d6aedda8e48280ac92e8ee97e6
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RestKit: a0244db34e14ed9cf059fcee2be6733cc162c34a
   RKValueTransformers: e5ed67e3811229b616fe01bddeeafe3bb337b1b9
   SOCKit: c7376ac262bea9115b8f749358f762522a47d392
   TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
 
-PODFILE CHECKSUM: 48e9602e9f07579f10299d0125e055ea2c2f0c20
+PODFILE CHECKSUM: e6acb723404333c406f54407480a5757abd24f60
 
 COCOAPODS: 1.2.0
