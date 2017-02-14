@@ -11,11 +11,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let alertNotificationName = Notification.Name("alert")
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Configure Client
         Client.sharedInstance.configure()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(alertUser), name: alertNotificationName, object: nil)
 
         return true
     }
@@ -40,6 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func alertUser() {
+        let alert = UIAlertController(title: "Oups", message: "It appears that you have no Internet connection", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 }
 
