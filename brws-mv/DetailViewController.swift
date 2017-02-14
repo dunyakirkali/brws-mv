@@ -11,14 +11,23 @@ import UIKit
 class DetailViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var plot: UILabel!
     
     var movie : Movie?
+    
+    let gotMovieNotificationName = Notification.Name("gotMovie")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.populateMovieDetails(_:)), name: gotMovieNotificationName, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         titleLabel.text = movie?.title
+        Client.sharedInstance.get(imdbId: movie!.imdbID)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,14 +39,12 @@ class DetailViewController: UIViewController {
         self.performSegue(withIdentifier: "toMoviesIndex", sender: self)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func populateMovieDetails(_ notification: NSNotification) {
+        print("populateMovieDetails")
+        let newMovie = notification.object as? Movie
+        print(notification.object)
+        print(newMovie!.year)
+        print(newMovie!.genre)
+        plot.text = movie?.plot
     }
-    */
-
 }

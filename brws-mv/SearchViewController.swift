@@ -53,22 +53,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 let data = try? Data(contentsOf: url!)
                 print(movies[row].poster)
                 cell.backgroundImage?.image = UIImage(data: data!)
+            } else {
+                cell.backgroundImage?.image = UIImage(named: "placeholder.jpg")
             }
             return cell
         }
-    }
-    
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-//        let destinationVC = DetailViewController()
-//        destinationVC.movie = movies[row]
-//        self.performSegue(withIdentifier: "toMovieDetails", sender: self)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if movies.count == 0 {
             return
         }
-        selectedRow = tableView.cellForRow(at: indexPath) as! MovieCellTableViewCell        
+        selectedRow = tableView.cellForRow(at: indexPath) as! MovieCellTableViewCell
         tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
         self.performSegue(withIdentifier: "toMovieDetails", sender: self)
     }
@@ -95,5 +91,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         movies = notification.object as! [Movie]
         tableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let movie = movies[tableView.indexPathForSelectedRow!.row]
+        print(movie)
+        let destinationVC = segue.destination as! DetailViewController
+        destinationVC.movie = movie
+    }
+    
 }
 

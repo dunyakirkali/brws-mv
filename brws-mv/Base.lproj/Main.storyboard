@@ -61,7 +61,7 @@
                     <connections>
                         <outlet property="searchBar" destination="WOn-hv-qGL" id="IYz-x9-LMY"/>
                         <outlet property="tableView" destination="J5p-Vq-lvt" id="aPE-Cx-5O3"/>
-                        <segue destination="PAG-ny-LyC" kind="custom" identifier="toMovieDetails" customClass="SegueToDetail" customModule="brws_mv" customModuleProvider="target" id="kcE-eH-QHa"/>
+                        <segue destination="PAG-ny-LyC" kind="show" identifier="toMovieDetails" id="kcE-eH-QHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,20 +109,30 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejC-Vy-bi2">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
-                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="44"/>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="30"/>
                                         <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYx-Qf-KGa">
+                                        <rect key="frame" x="8" y="207" width="359" height="388"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="oYx-Qf-KGa" firstAttribute="top" secondItem="ejC-Vy-bi2" secondAttribute="bottom" constant="8" id="2Bx-cl-pik"/>
                                     <constraint firstItem="ejC-Vy-bi2" firstAttribute="leading" secondItem="CuV-lu-TWc" secondAttribute="leading" id="F7h-KK-w7p"/>
                                     <constraint firstItem="EBn-GS-JOX" firstAttribute="top" secondItem="CuV-lu-TWc" secondAttribute="top" id="F8c-y6-Yxp"/>
                                     <constraint firstAttribute="trailing" secondItem="EBn-GS-JOX" secondAttribute="trailing" id="GSP-Hd-H6b"/>
                                     <constraint firstItem="EBn-GS-JOX" firstAttribute="height" secondItem="CuV-lu-TWc" secondAttribute="height" multiplier="0.33" id="GXM-jS-pUX"/>
                                     <constraint firstItem="EBn-GS-JOX" firstAttribute="leading" secondItem="CuV-lu-TWc" secondAttribute="leading" id="LOV-6G-FbY"/>
                                     <constraint firstItem="ejC-Vy-bi2" firstAttribute="height" secondItem="EBn-GS-JOX" secondAttribute="height" id="UaR-5L-V7j"/>
+                                    <constraint firstItem="oYx-Qf-KGa" firstAttribute="leading" secondItem="CuV-lu-TWc" secondAttribute="leading" constant="8" id="ZRe-Q7-GFq"/>
+                                    <constraint firstAttribute="trailing" secondItem="oYx-Qf-KGa" secondAttribute="trailing" constant="8" id="jwD-Mx-I4x"/>
                                     <constraint firstItem="ejC-Vy-bi2" firstAttribute="top" secondItem="CuV-lu-TWc" secondAttribute="top" id="mmk-zd-AWA"/>
+                                    <constraint firstAttribute="bottom" secondItem="oYx-Qf-KGa" secondAttribute="bottom" constant="8" id="uem-ou-JdH"/>
                                     <constraint firstAttribute="trailing" secondItem="ejC-Vy-bi2" secondAttribute="trailing" id="vbC-T1-58a"/>
                                 </constraints>
                             </view>
@@ -139,6 +149,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="image" destination="EBn-GS-JOX" id="48X-fV-j5l"/>
+                        <outlet property="plot" destination="oYx-Qf-KGa" id="JoM-4W-Veg"/>
                         <outlet property="titleLabel" destination="ejC-Vy-bi2" id="Nf6-7U-Bp1"/>
                     </connections>
                 </viewController>

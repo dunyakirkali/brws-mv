@@ -16,6 +16,7 @@ class Movie: NSObject {
     var director: String
     var plot: String
     var poster: String
+    var imdbID: String
     
     override init() {
         self.title = ""
@@ -24,5 +25,6 @@ class Movie: NSObject {
         self.director = ""
         self.plot = ""
         self.poster = ""
+        self.imdbID = ""
     }
 }
