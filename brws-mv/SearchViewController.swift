@@ -17,12 +17,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var movies = [Movie]()
     let tableCellIdentifier = "MovieCell"
     let placeholderCellIdentifier = "PlaceholderCell"
+    let gotMoviesNotificationName = Notification.Name("gotMovies")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "MovieCellTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
         tableView.register(UINib(nibName: "PlaceholderTableViewCell", bundle: nil), forCellReuseIdentifier: placeholderCellIdentifier)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.populateMovies(_:)), name: gotMoviesNotificationName, object: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,7 +48,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! MovieCellTableViewCell
             cell.movieName?.text = movies[row].title
-            cell.backgroundImage?.image = movies[row].poster
+            if movies[row].poster != "N/A" {
+                let url = URL(string: movies[row].poster)
+                let data = try? Data(contentsOf: url!)
+                print(movies[row].poster)
+                cell.backgroundImage?.image = UIImage(data: data!)
+            }
             return cell
         }
     }
@@ -53,7 +61,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
 //        let destinationVC = DetailViewController()
 //        destinationVC.movie = movies[row]
-        self.performSegue(withIdentifier: "toMovieDetails", sender: self)
+//        self.performSegue(withIdentifier: "toMovieDetails", sender: self)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -62,6 +70,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
         selectedRow = tableView.cellForRow(at: indexPath) as! MovieCellTableViewCell        
         tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
+        self.performSegue(withIdentifier: "toMovieDetails", sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -73,13 +82,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchFor(title: String) {
-        movies = Client.sharedInstance.searchFor(title: title)
-        tableView.reloadData()
+        Client.sharedInstance.searchFor(title: title)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchFor(title: searchBar.text!)
         self.view.endEditing(true)
+    }
+    
+    func populateMovies(_ notification: NSNotification) {
+        print("populateMovies")
+        movies = notification.object as! [Movie]
+        tableView.reloadData()
     }
 }
 

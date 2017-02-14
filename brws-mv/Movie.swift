@@ -15,15 +15,14 @@ class Movie: NSObject {
     var genre: String
     var director: String
     var plot: String
-    var poster: UIImage!
-
-    init(title: String, year: String, genre: String, director: String, plot: String, poster: UIImage) {
-        self.title = title
-        self.year = year
-        self.genre = genre
-        self.director = director
-        self.plot = plot
-        self.poster = poster
+    var poster: String
+    
+    override init() {
+        self.title = ""
+        self.year = ""
+        self.genre = ""
+        self.director = ""
+        self.plot = ""
+        self.poster = ""
     }
-
 }

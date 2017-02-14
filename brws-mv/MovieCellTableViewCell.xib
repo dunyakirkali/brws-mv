@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UJJ-Cj-QC5">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UJJ-Cj-QC5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0q-9g-Mcl">
