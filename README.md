@@ -7,6 +7,7 @@
 - ~~Custome TableCellView~~
 - ~~Show detail view on tap~~
 - ~~Handle connection Errors~~
+- ~~NavigationController~~
 - DRY up Notification names
 - Better segues
 - Implement Poster API once API key gets approved
