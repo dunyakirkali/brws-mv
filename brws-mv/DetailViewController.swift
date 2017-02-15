@@ -23,12 +23,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        plot.lineBreakMode = NSLineBreakMode.byWordWrapping
-        plot.numberOfLines = 0
-        
-        actors.lineBreakMode = NSLineBreakMode.byWordWrapping
-        actors.numberOfLines = 0
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.populateMovieDetails(_:)), name: gotMovieNotificationName, object: nil)
         
         title = movie?.title
