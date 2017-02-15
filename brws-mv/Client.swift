@@ -35,7 +35,7 @@ class Client: NSObject {
     
     func configure() {
         let movieMapping: RKObjectMapping = RKObjectMapping(for: Movie.self)
-        movieMapping.addAttributeMappings(from: ["Title": "title", "Year": "year", "Poster": "poster", "imdbID": "imdbID"])
+        movieMapping.addAttributeMappings(from: ["Title": "title", "Year": "year", "Poster": "poster", "imdbID": "imdbID", "Plot": "plot", "Genre": "genre", "Director": "director", "Actors": "actors"])
         let statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClass.successful)
         let resDescriptor = RKResponseDescriptor(mapping: movieMapping, method: RKRequestMethod.GET, pathPattern:nil, keyPath: "Search", statusCodes: statusCodes)
         let resDescriptorTwo = RKResponseDescriptor(mapping: movieMapping, method: RKRequestMethod.GET, pathPattern:nil, keyPath: nil, statusCodes: statusCodes)
@@ -83,7 +83,7 @@ class Client: NSObject {
         ]
         
         objectManager.getObjectsAtPath("/", parameters: params, success: { (operation, mappingResult) -> Void in
-            let result = mappingResult?.array()[0]
+            let result = mappingResult?.firstObject as! Movie
             NotificationCenter.default.post(name: self.gotMovieNotificationName, object: result)
             
         }) { (operation, error) -> Void in

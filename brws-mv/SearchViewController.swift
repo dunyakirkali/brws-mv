@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     let tableCellIdentifier = "MovieCell"
     let placeholderCellIdentifier = "PlaceholderCell"
     let gotMoviesNotificationName = Notification.Name("gotMovies")
+    let endGetNotificationName = Notification.Name("endGet")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             return
         }
         selectedRow = tableView.cellForRow(at: indexPath) as! MovieCellTableViewCell
-        tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
         self.performSegue(withIdentifier: "toMovieDetails", sender: self)
     }
     
@@ -89,14 +89,31 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func populateMovies(_ notification: NSNotification) {
         movies = notification.object as! [Movie]
-        tableView.reloadData()
+        if movies.count == 0 {
+            NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
+        }
+        self.reloadDataWithAnimation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let movie = movies[tableView.indexPathForSelectedRow!.row]
         let destinationVC = segue.destination as! DetailViewController
+        print(movie.imdbID)
         destinationVC.movie = movie
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            movies = []
+            NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
+            self.reloadDataWithAnimation()
+        }
+    }
+    
+    func reloadDataWithAnimation() {
+        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        tableView.reloadSections(sections as IndexSet, with: .automatic)
+    }
 }
 
