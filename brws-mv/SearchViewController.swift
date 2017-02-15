@@ -26,6 +26,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.register(UINib(nibName: "PlaceholderTableViewCell", bundle: nil), forCellReuseIdentifier: placeholderCellIdentifier)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.populateMovies(_:)), name: gotMoviesNotificationName, object: nil)
+        
+        title = "Movies"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,7 +74,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if movies.count == 0 {
             return tableView.frame.size.height
         } else {
-            return tableView.frame.size.height / 3.0;
+            return 200;
         }
     }
     
