@@ -93,12 +93,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if movies.count == 0 {
             NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
         }
-        tableView.reloadData()
+        self.reloadDataWithAnimation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let movie = movies[tableView.indexPathForSelectedRow!.row]
         let destinationVC = segue.destination as! DetailViewController
+        print(movie.imdbID)
         destinationVC.movie = movie
     }
     
@@ -106,9 +107,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if searchText == "" {
             movies = []
             NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
-            tableView.reloadData()
+            self.reloadDataWithAnimation()
         }
     }
     
+    func reloadDataWithAnimation() {
+        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        tableView.reloadSections(sections as IndexSet, with: .automatic)
+    }
 }
 

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -79,46 +80,127 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EBn-GS-JOX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="pCe-MY-iGc"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eyes.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EBn-GS-JOX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejC-Vy-bi2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-K7-e90">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plot" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYx-Qf-KGa">
+                                        <rect key="frame" x="8" y="269" width="359" height="326"/>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU0-Kx-4MU">
+                                        <rect key="frame" x="9" y="9" width="112" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="NRb-6w-788"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plot:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEA-71-clU">
+                                        <rect key="frame" x="8" y="217" width="359" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="f3j-UM-G3Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v18-h5-pEZ">
+                                        <rect key="frame" x="8" y="61" width="112" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="s3F-43-Oo7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actors:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8j-EK-JPL">
+                                        <rect key="frame" x="8" y="113" width="112" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="wjk-CZ-ZFc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horror" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2S-BF-VOH">
+                                        <rect key="frame" x="121" y="9" width="246" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="zsO-a0-hQu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dunya Kirkali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmI-3O-aO0">
+                                        <rect key="frame" x="120" y="61" width="247" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="5jj-jp-bdr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dunya Kirkali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4T-bc-Uah">
+                                        <rect key="frame" x="8" y="165" width="359" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="5vU-Wz-zTr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="fUI-5i-dOc"/>
+                                    <constraint firstAttribute="trailing" secondItem="oYx-Qf-KGa" secondAttribute="trailing" constant="8" id="0Pw-1n-Vi0"/>
+                                    <constraint firstItem="oYx-Qf-KGa" firstAttribute="top" secondItem="lEA-71-clU" secondAttribute="bottom" constant="8" id="26v-3G-aT8"/>
+                                    <constraint firstItem="O4T-bc-Uah" firstAttribute="top" secondItem="X8j-EK-JPL" secondAttribute="bottom" constant="8" id="3Ab-C5-k0z"/>
+                                    <constraint firstItem="lEA-71-clU" firstAttribute="top" secondItem="O4T-bc-Uah" secondAttribute="bottom" constant="8" id="52P-jU-22e"/>
+                                    <constraint firstItem="DU0-Kx-4MU" firstAttribute="top" secondItem="bh6-K7-e90" secondAttribute="top" constant="9" id="C99-M1-jLI"/>
+                                    <constraint firstItem="DmI-3O-aO0" firstAttribute="top" secondItem="A2S-BF-VOH" secondAttribute="bottom" constant="8" id="EUi-ID-PCx"/>
+                                    <constraint firstAttribute="trailing" secondItem="DmI-3O-aO0" secondAttribute="trailing" constant="8" id="M99-jB-6cL"/>
+                                    <constraint firstAttribute="trailing" secondItem="lEA-71-clU" secondAttribute="trailing" constant="8" id="P3s-1R-bnY"/>
+                                    <constraint firstItem="DU0-Kx-4MU" firstAttribute="width" secondItem="bh6-K7-e90" secondAttribute="width" multiplier="0.3" id="Vwj-vx-0Fl"/>
+                                    <constraint firstItem="DU0-Kx-4MU" firstAttribute="leading" secondItem="bh6-K7-e90" secondAttribute="leading" constant="9" id="Wzu-vA-i3E"/>
+                                    <constraint firstItem="X8j-EK-JPL" firstAttribute="top" secondItem="v18-h5-pEZ" secondAttribute="bottom" constant="8" id="YFG-0b-0Br"/>
+                                    <constraint firstItem="X8j-EK-JPL" firstAttribute="width" secondItem="bh6-K7-e90" secondAttribute="width" multiplier="0.3" id="aTB-vl-dbc"/>
+                                    <constraint firstItem="O4T-bc-Uah" firstAttribute="leading" secondItem="bh6-K7-e90" secondAttribute="leading" constant="8" id="bM0-1f-PIZ"/>
+                                    <constraint firstItem="v18-h5-pEZ" firstAttribute="leading" secondItem="bh6-K7-e90" secondAttribute="leading" constant="8" id="gXB-HC-Utg"/>
+                                    <constraint firstItem="v18-h5-pEZ" firstAttribute="width" secondItem="bh6-K7-e90" secondAttribute="width" multiplier="0.3" id="gpo-Vd-CD4"/>
+                                    <constraint firstItem="X8j-EK-JPL" firstAttribute="leading" secondItem="bh6-K7-e90" secondAttribute="leading" constant="8" id="hwo-jU-FQZ"/>
+                                    <constraint firstItem="v18-h5-pEZ" firstAttribute="top" secondItem="DU0-Kx-4MU" secondAttribute="bottom" constant="8" id="lBN-2q-muY"/>
+                                    <constraint firstAttribute="trailing" secondItem="O4T-bc-Uah" secondAttribute="trailing" constant="8" id="mlv-qj-wl1"/>
+                                    <constraint firstItem="DmI-3O-aO0" firstAttribute="leading" secondItem="v18-h5-pEZ" secondAttribute="trailing" id="ntG-bK-2lJ"/>
+                                    <constraint firstItem="A2S-BF-VOH" firstAttribute="leading" secondItem="DU0-Kx-4MU" secondAttribute="trailing" id="pYk-i4-Kod"/>
+                                    <constraint firstItem="A2S-BF-VOH" firstAttribute="top" secondItem="bh6-K7-e90" secondAttribute="top" constant="9" id="qzi-NJ-utW"/>
+                                    <constraint firstItem="oYx-Qf-KGa" firstAttribute="leading" secondItem="bh6-K7-e90" secondAttribute="leading" constant="8" id="rCI-3G-giY"/>
+                                    <constraint firstAttribute="trailing" secondItem="A2S-BF-VOH" secondAttribute="trailing" constant="8" id="tkn-DF-y9C"/>
+                                    <constraint firstItem="lEA-71-clU" firstAttribute="leading" secondItem="bh6-K7-e90" secondAttribute="leading" constant="8" id="uOv-Lw-cd1"/>
+                                    <constraint firstAttribute="bottom" secondItem="oYx-Qf-KGa" secondAttribute="bottom" constant="8" id="ylb-wr-Ca0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CircularStdBook" family="Circular Std" pointSize="30"/>
-                                <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYx-Qf-KGa">
-                                <rect key="frame" x="0.0" y="264" width="375" height="403"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ejC-Vy-bi2" secondAttribute="trailing" id="4Zc-Du-zUH"/>
-                            <constraint firstItem="ejC-Vy-bi2" firstAttribute="top" secondItem="hkL-Ck-h1X" secondAttribute="bottom" id="QEW-Fe-f10"/>
-                            <constraint firstItem="oYx-Qf-KGa" firstAttribute="leading" secondItem="Cdv-Yi-rji" secondAttribute="leading" id="Rnd-MF-1DZ"/>
-                            <constraint firstItem="oYx-Qf-KGa" firstAttribute="top" secondItem="ejC-Vy-bi2" secondAttribute="bottom" id="SSs-Is-1s6"/>
-                            <constraint firstAttribute="trailing" secondItem="EBn-GS-JOX" secondAttribute="trailing" id="WCu-Pl-pbn"/>
-                            <constraint firstItem="SnE-Nc-qKf" firstAttribute="top" secondItem="oYx-Qf-KGa" secondAttribute="bottom" id="XQv-qf-pTR"/>
-                            <constraint firstItem="EBn-GS-JOX" firstAttribute="leading" secondItem="Cdv-Yi-rji" secondAttribute="leading" id="fe0-ph-h6T"/>
-                            <constraint firstItem="EBn-GS-JOX" firstAttribute="top" secondItem="hkL-Ck-h1X" secondAttribute="bottom" id="paa-0Q-0Dm"/>
-                            <constraint firstItem="ejC-Vy-bi2" firstAttribute="leading" secondItem="Cdv-Yi-rji" secondAttribute="leading" id="vAR-Q6-4aF"/>
-                            <constraint firstAttribute="trailing" secondItem="oYx-Qf-KGa" secondAttribute="trailing" id="znu-Ad-hph"/>
+                            <constraint firstItem="SnE-Nc-qKf" firstAttribute="top" secondItem="bh6-K7-e90" secondAttribute="bottom" id="LDO-67-oDm"/>
+                            <constraint firstItem="bh6-K7-e90" firstAttribute="leading" secondItem="Cdv-Yi-rji" secondAttribute="leading" id="jSg-p9-Iks"/>
+                            <constraint firstAttribute="trailing" secondItem="bh6-K7-e90" secondAttribute="trailing" id="uid-Mw-9CE"/>
+                            <constraint firstItem="bh6-K7-e90" firstAttribute="top" secondItem="hkL-Ck-h1X" secondAttribute="bottom" id="yDN-7w-gd2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actors" destination="O4T-bc-Uah" id="690-Tp-768"/>
+                        <outlet property="director" destination="DmI-3O-aO0" id="xKA-Hh-6S5"/>
+                        <outlet property="genre" destination="A2S-BF-VOH" id="GVv-9B-zJT"/>
                         <outlet property="image" destination="EBn-GS-JOX" id="48X-fV-j5l"/>
                         <outlet property="plot" destination="oYx-Qf-KGa" id="JoM-4W-Veg"/>
-                        <outlet property="titleLabel" destination="ejC-Vy-bi2" id="Nf6-7U-Bp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kqe-Gz-qJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,7 +214,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nub-8u-yUu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nub-8u-yUu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

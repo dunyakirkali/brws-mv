@@ -14,6 +14,7 @@ class Movie: NSObject {
     var year: String
     var genre: String
     var director: String
+    var actors: String
     var plot: String
     var poster: String
     var imdbID: String
@@ -23,6 +24,7 @@ class Movie: NSObject {
         self.year = ""
         self.genre = ""
         self.director = ""
+        self.actors = ""
         self.plot = ""
         self.poster = ""
         self.imdbID = ""

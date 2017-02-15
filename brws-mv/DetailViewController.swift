@@ -10,9 +10,11 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var plot: UILabel!
+    @IBOutlet weak var genre: UILabel!
+    @IBOutlet weak var director: UILabel!
+    @IBOutlet weak var actors: UILabel!
     
     var movie : Movie?
     
@@ -21,15 +23,21 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        plot.lineBreakMode = NSLineBreakMode.byWordWrapping
+        plot.numberOfLines = 0
+        
+        actors.lineBreakMode = NSLineBreakMode.byWordWrapping
+        actors.numberOfLines = 0
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.populateMovieDetails(_:)), name: gotMovieNotificationName, object: nil)
         
-        title = "Details"
+        title = movie?.title
+        
+        Client.sharedInstance.get(imdbId: movie!.imdbID)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        titleLabel.text = movie?.title
-        Client.sharedInstance.get(imdbId: movie!.imdbID)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,10 +46,18 @@ class DetailViewController: UIViewController {
     }
 
     func populateMovieDetails(_ notification: NSNotification) {
-        print("populateMovieDetails")
-        let newMovie = notification.object as? Movie
-        print(newMovie!.year)
-        print(newMovie!.genre)
+        movie = notification.object as? Movie
         plot.text = movie?.plot
+        plot.sizeToFit()
+        director.text = movie?.director
+        actors.text = movie?.actors
+        genre.text = movie?.genre
+        if movie?.poster != "N/A" {
+            let url = URL(string: movie!.poster)
+            let data = try? Data(contentsOf: url!)
+            image.image = UIImage(data: data!)
+        } else {
+            image.image = UIImage(named: "placeholder.jpg")
+        }
     }
 }
