@@ -67,7 +67,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             return
         }
         selectedRow = tableView.cellForRow(at: indexPath) as! MovieCellTableViewCell
-        tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.top, animated: true)
         self.performSegue(withIdentifier: "toMovieDetails", sender: self)
     }
     
