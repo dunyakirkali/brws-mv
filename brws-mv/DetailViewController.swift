@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.populateMovieDetails(_:)), name: gotMovieNotificationName, object: nil)
+        
+        title = "Details"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,15 +36,10 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func back(sender: UIButton) {
-        self.performSegue(withIdentifier: "toMoviesIndex", sender: self)
-    }
 
     func populateMovieDetails(_ notification: NSNotification) {
         print("populateMovieDetails")
         let newMovie = notification.object as? Movie
-        print(notification.object)
         print(newMovie!.year)
         print(newMovie!.genre)
         plot.text = movie?.plot
