@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     let tableCellIdentifier = "MovieCell"
     let placeholderCellIdentifier = "PlaceholderCell"
     let gotMoviesNotificationName = Notification.Name("gotMovies")
+    let endGetNotificationName = Notification.Name("endGet")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func populateMovies(_ notification: NSNotification) {
         movies = notification.object as! [Movie]
+        if movies.count == 0 {
+            NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
+        }
         tableView.reloadData()
     }
     
@@ -96,6 +100,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let movie = movies[tableView.indexPathForSelectedRow!.row]
         let destinationVC = segue.destination as! DetailViewController
         destinationVC.movie = movie
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            movies = []
+            NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
+            tableView.reloadData()
+        }
     }
     
 }
