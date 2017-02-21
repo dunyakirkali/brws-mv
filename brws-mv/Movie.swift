@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class Movie: NSObject {
+class Movie: NSObject, Mappable {
 
     var title: String
     var year: String
@@ -19,7 +20,7 @@ class Movie: NSObject {
     var poster: String
     var imdbID: String
     
-    override init() {
+    required init?(map: Map) {
         self.title = ""
         self.year = ""
         self.genre = ""
@@ -28,5 +29,17 @@ class Movie: NSObject {
         self.plot = ""
         self.poster = ""
         self.imdbID = ""
+    }
+    
+    // Mappable
+    func mapping(map: Map) {
+        title      <- map["Title"]
+        year       <- map["Year"]
+        genre      <- map["Genre"]
+        director   <- map["Director"]
+        actors     <- map["Actors"]
+        plot       <- map["Plot"]
+        poster     <- map["Poster"]
+        imdbID     <- map["imdbID"]
     }
 }
