@@ -43,21 +43,28 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            return
+        }
         let row = indexPath.row
+        let movieCell = cell as! MovieCellTableViewCell
+        movieCell.movieName?.text = movies[row].title
+        if movies[row].poster != "N/A" {
+            let url = URL(string: movies[row].poster)
+            let data = try? Data(contentsOf: url!)
+            movieCell.backgroundImage?.image = UIImage(data: data!)
+        } else {
+            movieCell.backgroundImage?.image = UIImage(named: "placeholder.jpg")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if movies.count == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: placeholderCellIdentifier, for: indexPath) as! PlaceholderTableViewCell
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! MovieCellTableViewCell
-            cell.movieName?.text = movies[row].title
-            if movies[row].poster != "N/A" {
-                let url = URL(string: movies[row].poster)
-                let data = try? Data(contentsOf: url!)
-                cell.backgroundImage?.image = UIImage(data: data!)
-            } else {
-                cell.backgroundImage?.image = UIImage(named: "placeholder.jpg")
-            }
             return cell
         }
     }
