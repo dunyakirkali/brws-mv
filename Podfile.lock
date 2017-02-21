@@ -1,12 +1,15 @@
 PODS:
+  - ObjectMapper (2.2.2)
   - Reachability (3.2)
 
 DEPENDENCIES:
+  - ObjectMapper
   - Reachability
 
 SPEC CHECKSUMS:
+  ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-PODFILE CHECKSUM: ba215431401a9f090d9fc4db68d13ca09572ed78
+PODFILE CHECKSUM: c295be19a5c3613f0f8f4b62ce7edd3ab5c6f2d8
 
 COCOAPODS: 1.2.0

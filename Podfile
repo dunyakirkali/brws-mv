@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'brws-mv' do
   pod 'Reachability'
+  pod 'ObjectMapper'
 end
