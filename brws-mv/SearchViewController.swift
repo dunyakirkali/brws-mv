@@ -98,7 +98,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let movie = movies[tableView.indexPathForSelectedRow!.row]
         let destinationVC = segue.destination as! DetailViewController
-        print(movie.imdbID)
         destinationVC.movie = movie
     }
     
