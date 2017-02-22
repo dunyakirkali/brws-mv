@@ -50,11 +50,19 @@ class Client: NSObject {
             if (error != nil || httpResponse?.statusCode != 200) {
                 NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
             } else {
-                // TODO: Use actual data
-                let movie = Movie(JSONString: "{\"Title\":\"Beta Test\",\"Year\":\"2016\",\"imdbID\":\"tt4244162\",\"Type\":\"movie\",\"Poster\":\"https://images-na.ssl-images-amazon.com/images/M/MV5BODdlMjU0MDYtMWQ1NC00YjFjLTgxMDQtNDYxNTg2ZjJjZDFiXkEyXkFqcGdeQXVyMTU2NTcxNDg@._V1_SX300.jpg\"}")
-                
+                let inJsonString = String(data: data!, encoding: String.Encoding.utf8)
+                let decoded = try? JSONSerialization.jsonObject(with: (inJsonString?.data(using: String.Encoding.utf8))!, options: [])
+                let dictFromJSON = decoded as? [String:Any]
+                var movies = [Movie]()
+                let items = dictFromJSON?["Search"] as! [Any]
+                for movieJson in items {
+                    let jsonData = try? JSONSerialization.data(withJSONObject: movieJson, options: .prettyPrinted)
+                    let jsonString = NSString(data: jsonData!, encoding: String.Encoding.utf8.rawValue)! as String
+                    let movie = Movie(JSONString: jsonString)
+                    movies.append(movie!)
+                }
                 DispatchQueue.main.sync(execute: {
-                    NotificationCenter.default.post(name: self.gotMoviesNotificationName, object: [movie])
+                    NotificationCenter.default.post(name: self.gotMoviesNotificationName, object: movies)
                 })
                 
             }
