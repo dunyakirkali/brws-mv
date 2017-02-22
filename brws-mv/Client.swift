@@ -41,12 +41,25 @@ class Client: NSObject {
         }
         
         NotificationCenter.default.post(name: startGetNotificationName, object: nil)
-        
-        let params: [String: String] = [
-            "s" : title,
-            "r" : "json"
-        ]
-
+        let session = URLSession.shared
+        let url = URL(string: kBaseURL + "?s=\(title)&r='json'")
+        let request = NSMutableURLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 1)
+        request.httpMethod = "GET"
+        let task = session.dataTask(with: request as URLRequest) {data,response,error in
+            let httpResponse = response as? HTTPURLResponse
+            if (error != nil || httpResponse?.statusCode != 200) {
+                NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
+            } else {
+                // TODO: Use actual data
+                let movie = Movie(JSONString: "{\"Title\":\"Beta Test\",\"Year\":\"2016\",\"imdbID\":\"tt4244162\",\"Type\":\"movie\",\"Poster\":\"https://images-na.ssl-images-amazon.com/images/M/MV5BODdlMjU0MDYtMWQ1NC00YjFjLTgxMDQtNDYxNTg2ZjJjZDFiXkEyXkFqcGdeQXVyMTU2NTcxNDg@._V1_SX300.jpg\"}")
+                
+                DispatchQueue.main.sync(execute: {
+                    NotificationCenter.default.post(name: self.gotMoviesNotificationName, object: [movie])
+                })
+                
+            }
+        }
+        task.resume()
     }
     
     func get(imdbId: String) {
@@ -56,11 +69,25 @@ class Client: NSObject {
         }
         
         NotificationCenter.default.post(name: startGetNotificationName, object: nil)
-        
-        let params: [String: String] = [
-            "i" : imdbId,
-            "r" : "json"
-        ]
+        let session = URLSession.shared
+        let url = URL(string: kBaseURL + "?i=\(imdbId)&r='json'")
+        let request = NSMutableURLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 1)
+        request.httpMethod = "GET"
+        let task = session.dataTask(with: request as URLRequest) {data,response,error in
+            let httpResponse = response as? HTTPURLResponse
+            if (error != nil || httpResponse?.statusCode != 200) {
+                NotificationCenter.default.post(name: self.endGetNotificationName, object: nil)
+            } else {
+                let jsonString = String(data: data!, encoding: String.Encoding.utf8)
+                let movie = Movie(JSONString: jsonString!)
+                
+                DispatchQueue.main.sync(execute: {
+                    NotificationCenter.default.post(name: self.gotMovieNotificationName, object: movie)
+                })
+                
+            }
+        }
+        task.resume()
     }
     
     
